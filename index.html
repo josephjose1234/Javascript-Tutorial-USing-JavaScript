@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>JavaScript</h1>
+        <p>
+            JavaScript is a high-level, interpreted programming language
+            primarily used for building dynamic web pages. It allows
+            developers to add interactivity, manipulate the content of a webpage,
+            and respond to user actions. JavaScript is a key component of web development
+            alongside HTML and CSS, forming the trio commonly known as the "front-end" technologies.
+        </p>
+    </div>
+    <section id="#1">
+        <h3>JavaScript in Html</h3>
+        <h5 style="text-decoration: underline;"><code>&lt;script&gt;</code> Tag</h5>
+        <p>
+            In HTML, JavaScript code is inserted between &lt;script&gt; and &lt;/script&gt; tags.
+        </p>
+        <p id="Text"></p>
+        <script>
+            document.getElementById("Text").innerHTML = "Iam a Javascript Text..";
+        </script>
+        <p>Javascript can be placed in the &lt;body&gt;, or in the &lt;head&gt; section of an HTML page, or in both.
+        </p>
+        <h5 style="text-decoration: underline;">External Javascript</h5>
+        <p>
+            External scripts are practical when the same code is used in many different web pages.
+            JavaScript files have the file extension .js.
+            To use an external script, put the name of the script file in the src (source) attribute of a &lt;script&gt;
+            tag:
+        </p>
+    </section>
+    <section id="#2">
+        <h3>JavaScript Display</h3>
+        <b>Using innerHtml</b>
+        <p>
+            To access an HTML element, JavaScript can use the document.getElementById(id) method.
+            The id attribute defines the HTML element. The innerHTML property defines the HTML content:
+            <b id="Tex"></b>
+        </p>
+        <script>
+            document.getElementById("Tex").innerHTML = "This Text is written using JavaScript";
+        </script>
+        <b>Using Document.write</b>
+        <p>Never call document.write after the document has finished loading.
+            It will overwrite the whole document.</p>
+        <script>
+            document.write(5 + 6);
+        </script>
+        <b>Using window.alert</b>
+        <button onclick="showAlert()">Click me to know What is 1+1=??</button>
+
+        <!-- Add a script to define the showAlert function -->
+        <script>
+            function showAlert() {
+                window.alert('1+1=2');
+            }
+        </script>
+        <b>Using console.log</b>
+        <p>
+            For debugging purposes, you can call the console.log() method in the browser to display data.
+        </p>
+    </section>
+<section id="#3">
+<h3></h3>
+</section>
+
+</body>
+
+</html>
