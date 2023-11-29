@@ -3,7 +3,25 @@
 
 <head>
     <title>JavaScript</title>
+
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
 
 <body>
     <div style="text-align: center;">
@@ -38,8 +56,9 @@
     </section>
     <section id="#2">
         <h3>JavaScript Display</h3>
-        <b>Using innerHtml</b>
+
         <p>
+            <b>Using innerHtml</b><br>
             To access an HTML element, JavaScript can use the document.getElementById(id) method.
             The id attribute defines the HTML element. The innerHTML property defines the HTML content:
             <b id="Tex"></b>
@@ -47,30 +66,1517 @@
         <script>
             document.getElementById("Tex").innerHTML = "This Text is written using JavaScript";
         </script>
-        <b>Using Document.write</b>
-        <p>Never call document.write after the document has finished loading.
-            It will overwrite the whole document.</p>
-        <script>
-            document.write(5 + 6);
-        </script>
-        <b>Using window.alert</b>
-        <button onclick="showAlert()">Click me to know What is 1+1=??</button>
-
-        <!-- Add a script to define the showAlert function -->
-        <script>
-            function showAlert() {
-                window.alert('1+1=2');
-            }
-        </script>
-        <b>Using console.log</b>
         <p>
-            For debugging purposes, you can call the console.log() method in the browser to display data.
+            <b>Using Document.write</b><br>
+            Never call document.write after the document has finished loading.
+            It will overwrite the whole document.
+            <b>
+                <script>
+                    document.write('Text written using Document.write');
+                </script>
+            </b>
+        </p>
+        <p>
+            <b> Using window.alert</b><br>
+            <button onclick="showAlert()">Click me to know What is 1+1=??</button>
+
+            <!-- Add a script to define the showAlert function -->
+            <script>
+                function showAlert() {
+                    window.alert('1+1=2');
+                }
+            </script>
+        </p>
+        <p>
+            <b>Using console.log</b>
+            For debugging purposes, you can call the console.log() method in the browser to display data in Debug
+            Console.
         </p>
     </section>
-<section id="#3">
-<h3></h3>
-</section>
+    <section id="#3">
 
+        <h3>Javascript Comments</h3>
+        <script>
+            //This is an Example for Javascript Comments!!, it will be ignored by javascript,will not be executed.
+            /* Example
+            for 
+            Multiline Comments*/
+        </script>
+        <p></p>
+        Single line comments start with //.<br>
+        Multi-line comments start with /* and end with */.<br>
+        Any text between /* and */ will be ignored by JavaScript.<br>
+        We can use comments to prevent execution of code.
+        </p>
+    </section>
+    <section id="#4">
+        <h3>JavaScript Variables</h3>
+        <p>Variables are Containers for Storing Data
+            JavaScript Variables can be declared in 4 ways:
+            <br>Automatically<br>
+            Using<code> var</code> <br>
+            Using <code> let</code><br>
+            Using <code> const</code><br>
+            You can declare many variables in one statement.
+            Start the statement with let and separate the variables by comma,
+        </p>
+        <script>
+            let personName = "John Doe", carName = "Volvo", price = 200;
+        </script>
+    </section>
+    <section id="#5">
+        <h3>JavaScript Operators</h3>
+        <b>Write Click and Inspect for the code</b><br>
+        <p> + Addition
+            <script>document.write(4 + 6);</script><br>
+            - Subtraction
+            <script>document.write(10 - 6);</script><br>
+            * Multiplication
+            <script>document.write(4 * 4);</script><br>
+            / Division
+            <script>document.write(16 / 4);</script><br>
+            ** Exponentiation
+            <script>document.write(4 ** 2);</script><br>
+            % Modulus (Division Remainder)
+            <script>document.write(16 % 3);</script><br>
+            ++ Increment
+            <script> var num = 4; document.write(num++);</script><br>
+            -- Decrement
+            <script> var num = 4; document.write(num--);</script><br>
+        </p>
+    </section>
+    </section>
+    <section id="#6">
+        <h3>JavaScript has 8 Datatypes</h3>
+        <p>String, Number, Bigint, Boolean, Undefined, Null, Symbol, Object</p>
+    </section>
+    <section id="#7">
+        <h3>JavaScript Arrays</h3>
+        <p>
+            JavaScript arrays are written with square brackets.
+            Array items are separated by commas.
+            The following code declares (creates) an array called ThisProject, containing three items.<br>
+            <script>const ThisProject = ["html", "css", "javascript"];
+                document.write(ThisProject);
+            </script> <br>Array indexes are zero-based, which means the first item is [0], second is [1], and so on.
+        </p>
+    </section>
+    <section id="#8">
+        <h3>JavaScript Function</h3>
+        <p>
+            A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().
+            Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+            The parentheses may include parameter names separated by commas:
+            (parameter1, parameter2, ...)
+            The code to be executed, by the function, is placed inside curly brackets: {}<br>
+            <code>function name(parameter1, parameter2, parameter3) {
+            // code to be executed
+          }</code>
+            <script>
+                // Define a function named 'addNumbers' with two parameters
+                function addNumbers(number1, number2) {
+                    //Inside the function, the arguments (the parameters) behave as local variables.
+                    // Perform the addition
+                    var sum = number1 + number2;
+
+                    // Display the result using an alert
+                    window.alert("The sum is: " + sum);
+
+                    // Alternatively, you can log the result to the console
+                    // console.log("The sum is: " + sum);
+                }
+            </script>
+            <button onclick="addNumbers(5, 7);/*here the 'addNumbers' function got called*/">Click me to add
+                numbers</button>
+        </p>
+    </section>
+    <section id="#9">
+
+        <h3>JavaScript Objects</h3>
+        <p>
+            You have already learned that JavaScript variables are containers for data values.
+            Objects are variables too. But objects can contain many values.
+            The values are written as name:value pairs (name and value separated by a colon).<br>
+            <script>const Number = {
+                    Num: 3,
+                    NumType: 'odd',
+                    NumSquare: 9,
+                };
+                document.write("Number: " + Number.Num + "<br>");//here it prints the number using 'document.write' and the it is accessed using 'Number.Num'
+                document.write("NumType: " + Number.NumType + "<br>");
+                document.write("Number: " + Number.NumSquare + "<br>");
+            </script>
+            objects allow you to group related data and functionality together.
+        </p>
+    </section>
+    <section id="#10">
+        <h3>What is <b>this?</b></h3>
+        <p>
+            In JavaScript, the this keyword refers to an object.
+            Which object depends on how this is being invoked (used or called).
+            The this keyword refers to different objects depending on how it is used:
+        </p>
+        <table>
+            <tr>
+                <th>Situation</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>In an object method</td>
+                <td>'this' refers to the object.</td>
+            </tr>
+            <tr>
+                <td>Alone</td>
+                <td>'this' refers to the global object.</td>
+            </tr>
+            <tr>
+                <td>In a function</td>
+                <td>'this' refers to the global object.</td>
+            </tr>
+            <tr>
+                <td>In a function, in strict mode</td>
+                <td>'this' is undefined.</td>
+            </tr>
+            <tr>
+                <td>In an event</td>
+                <td>'this' refers to the element that received the event.</td>
+            </tr>
+            <tr>
+                <td>Methods like call(), apply(), and bind()</td>
+                <td>Can refer 'this' to any object.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="#11">
+        <h3>JavaScript Events</h3>
+        <p>
+            HTML events are "things" that happen to HTML elements.
+            When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+        </p>
+    </section>
+    <section id="#12">
+        <h3></h3>
+        <p>
+            In JavaScript, events are actions or occurrences that happen in the browser, such as a user clicking a
+            button, pressing a key, resizing a window, or the browser finishing loading a page. Handling events is a
+            fundamental aspect of building interactive and dynamic web pages.
+        </p>
+        <script>
+            // Event handler function
+            function handleClick() {
+                alert('Please Dont Disturb Me!!');
+            }
+
+            // Add event listener to the button element
+            document.addEventListener('DOMContentLoaded', function () {
+                var myButton = document.getElementById('myButton');
+                myButton.addEventListener('click', handleClick);
+            });
+        </script>
+        <button id="myButton">Click Me</button>
+    </section>
+    <section id="#13">
+        <h3>JavaScript Strings</h3>
+        <p>
+            A JavaScript string is zero or more characters written inside quotes.
+            <script>
+                let myString = 'Iam a String';
+                let myString2 = "iam a String using Double Qoutes";
+                let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                let length = text.length;
+            </script>
+        </p>
+    </section>
+    <section id="#14">
+        <h3>Escape Character</h3>
+        <table>
+            <tr>
+                <th>Code</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td>\b</td>
+                <td>Backspace</td>
+            </tr>
+            <tr>
+                <td>\f</td>
+                <td>Form Feed</td>
+            </tr>
+            <tr>
+                <td>\n</td>
+                <td>New Line</td>
+            </tr>
+            <tr>
+                <td>\r</td>
+                <td>Carriage Return</td>
+            </tr>
+            <tr>
+                <td>\t</td>
+                <td>Horizontal Tabulator</td>
+            </tr>
+            <tr>
+                <td>\v</td>
+                <td>Vertical Tabulator</td>
+            </tr>
+            <tr>
+                <td>\'</td>
+                <td>Adds '</td>
+            </tr>
+            <tr>
+                <td>\"</td>
+                <td>Adds "</td>
+            </tr>
+            <tr>
+                <td>\\</td>
+                <td>Adds \</td>
+            </tr>
+        </table>
+    </section>
+    <section id="#15">
+        <h3>JavaScript String Methods</h3>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>length</td>
+                <td>Returns the length of a string.</td>
+            </tr>
+            <tr>
+                <td>charAt(index)</td>
+                <td>Returns the character at the specified index.</td>
+            </tr>
+            <tr>
+                <td>charCodeAt(index)</td>
+                <td>Returns the Unicode of the character at the specified index.</td>
+            </tr>
+            <tr>
+                <td>concat(str1, str2, ...)</td>
+                <td>Combines two or more strings.</td>
+            </tr>
+            <tr>
+                <td>indexOf(searchValue, startIndex)</td>
+                <td>Returns the index of the first occurrence of a specified value in a string.</td>
+            </tr>
+            <tr>
+                <td>lastIndexOf(searchValue, startIndex)</td>
+                <td>Returns the index of the last occurrence of a specified value in a string.</td>
+            </tr>
+            <tr>
+                <td>slice(startIndex, endIndex)</td>
+                <td>Extracts a section of a string and returns a new string.</td>
+            </tr>
+            <tr>
+                <td>substring(startIndex, endIndex)</td>
+                <td>Similar to slice but cannot accept negative indices.</td>
+            </tr>
+            <tr>
+                <td>substr(startIndex, length)</td>
+                <td>Returns a specified number of characters from a string, starting at the specified index.</td>
+            </tr>
+            <tr>
+                <td>replace(oldValue, newValue)</td>
+                <td>Replaces a specified value with another value in a string.</td>
+            </tr>
+            <tr>
+                <td>replaceAll(oldValue, newValue)</td>
+                <td>Replaces all occurrences of a specified value with another value in a string.</td>
+            </tr>
+            <tr>
+                <td>toUpperCase()</td>
+                <td>Converts a string to uppercase.</td>
+            </tr>
+            <tr>
+                <td>toLowerCase()</td>
+                <td>Converts a string to lowercase.</td>
+            </tr>
+            <tr>
+                <td>concat(str1, str2, ...)</td>
+                <td>Combines two or more strings.</td>
+            </tr>
+            <tr>
+                <td>trim()</td>
+                <td>Removes whitespaces from both ends of a string.</td>
+            </tr>
+            <tr>
+                <td>trimStart()</td>
+                <td>Removes whitespaces from the beginning of a string.</td>
+            </tr>
+            <tr>
+                <td>trimEnd()</td>
+                <td>Removes whitespaces from the end of a string.</td>
+            </tr>
+            <tr>
+                <td>padStart(targetLength, padString)</td>
+                <td>Pads the start of a string with a specified string until it reaches a specified length.</td>
+            </tr>
+            <tr>
+                <td>padEnd(targetLength, padString)</td>
+                <td>Pads the end of a string with a specified string until it reaches a specified length.</td>
+            </tr>
+            <tr>
+                <td>charAt()</td>
+                <td>Returns the character at the specified index.</td>
+            </tr>
+            <tr>
+                <td>charCodeAt()</td>
+                <td>Returns the Unicode of the character at the specified index.</td>
+            </tr>
+            <tr>
+                <td>split(separator, limit)</td>
+                <td>Splits a string into an array of substrings based on a specified separator.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="#16">
+        <h3>JavaScript String Search</h3>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+
+            </tr>
+            <tr>
+                <td><code>indexOf(searchValue, fromIndex)</code></td>
+                <td>Returns the index of the first occurrence of <code>searchValue</code> in the string. If not found,
+                    returns -1.</td>
+
+            </tr>
+            <tr>
+                <td><code>lastIndexOf(searchValue, fromIndex)</code></td>
+                <td>Returns the index of the last occurrence of <code>searchValue</code> in the string. If not found,
+                    returns -1.</td>
+
+            </tr>
+            <tr>
+                <td><code>search(regexp)</code></td>
+                <td>Searches for a match between a regular expression <code>regexp</code> and the string. Returns the
+                    index of the first match, or -1 if not found.</td>
+
+            </tr>
+            <tr>
+                <td><code>match(regexp)</code></td>
+                <td>Returns an array containing the matches of the regular expression <code>regexp</code> in the string.
+                    If not found, returns <code>null</code>.</td>
+
+            </tr>
+            <tr>
+                <td><code>matchAll(regexp)</code></td>
+                <td>Returns an iterator of all matches of the regular expression <code>regexp</code> in the string.</td>
+
+            </tr>
+            <tr>
+                <td><code>includes(searchValue)</code></td>
+                <td>Returns <code>true</code> if the string contains <code>searchValue</code>, otherwise returns
+                    <code>false</code>.
+                </td>
+
+            </tr>
+            <tr>
+                <td><code>startsWith(searchString)</code></td>
+                <td>Returns <code>true</code> if the string starts with <code>searchString</code>, otherwise returns
+                    <code>false</code>.
+                </td>
+
+            </tr>
+            <tr>
+                <td><code>endsWith(searchString)</code></td>
+                <td>Returns <code>true</code> if the string ends with <code>searchString</code>, otherwise returns
+                    <code>false</code>.
+                </td>
+
+            </tr>
+        </table>
+    </section>
+    <section id="#17">
+        <h3>JavaScript Numbers</h3>
+
+        <p>
+            JavaScript has only one type of number. Numbers can be written with or without decimals.
+            If you add two numbers, the result will be a number:
+        </p>
+        <p id="demo"></p>
+
+        <script>
+            let x = 10;
+            let y = 20;
+            let z = x + y;
+            document.getElementById("demo").innerHTML = z;
+        </script>
+        <p>If you add two strings, the result will be a string concatenation:</p>
+        <p id="demo1"></p>
+
+        <script>
+            let x1 = "10";
+            let y1 = "20";
+            let z1 = x1 + y1;
+            document.getElementById("demo1").innerHTML = z1;
+        </script>
+    </section>
+    <section id="#18">
+        <h3>JavaScript Number Methods</h3>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>toString()</code></td>
+                <td>Returns a number as a string.</td>
+            </tr>
+            <tr>
+                <td><code>toExponential()</code></td>
+                <td>Returns a number written in exponential notation.</td>
+            </tr>
+            <tr>
+                <td><code>toFixed()</code></td>
+                <td>Returns a number written with a specified number of decimals.</td>
+            </tr>
+            <tr>
+                <td><code>toPrecision()</code></td>
+                <td>Returns a number written with a specified length. The method can also use exponential notation or
+                    zero padding to achieve the specified length.</td>
+            </tr>
+            <tr>
+                <td><code>valueOf()</code></td>
+                <td>Returns a number as a primitive value (number).</td>
+            </tr>
+        </table>
+    </section>
+    <section id="19">
+        <h3>
+            JavaScript Arrays
+        </h3>
+        <p>
+            An array can hold many values under a single name, and you can access the values by referring to an index
+            number.
+        </p>
+        <!--declaring and accesing and using arrays-->
+    </section>
+    <section id="19">
+        <h3>
+            JavaScript Array Methods
+        </h3>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>length</code></td>
+                <td>Returns the number of elements in an array.</td>
+            </tr>
+            <tr>
+                <td><code>toString()</code></td>
+                <td>Converts an array to a string, where the elements are separated by commas.</td>
+            </tr>
+            <tr>
+                <td><code>pop()</code></td>
+                <td>Removes the last element from an array and returns that element.</td>
+            </tr>
+            <tr>
+                <td><code>push(element1, ..., elementN)</code></td>
+                <td>Adds one or more elements to the end of an array and returns the new length of the array.</td>
+            </tr>
+            <tr>
+                <td><code>shift()</code></td>
+                <td>Removes the first element from an array and returns that element.</td>
+            </tr>
+            <tr>
+                <td><code>unshift(element1, ..., elementN)</code></td>
+                <td>Adds one or more elements to the beginning of an array and returns the new length of the array.</td>
+            </tr>
+            <tr>
+                <td><code>join(separator)</code></td>
+                <td>Joins all elements of an array into a string, separated by the specified separator.</td>
+            </tr>
+            <tr>
+                <td><code>delete index</code></td>
+                <td>Deletes an element at a specific index in an array (not recommended, leaves undefined holes).</td>
+            </tr>
+            <tr>
+                <td><code>concat(array2, ..., arrayN)</code></td>
+                <td>Combines two or more arrays.</td>
+            </tr>
+            <tr>
+                <td><code>flat(depth)</code></td>
+                <td>Returns a new array with all sub-array elements concatenated recursively up to the specified depth.
+                </td>
+            </tr>
+            <tr>
+                <td><code>splice(start, deleteCount, item1, ..., itemN)</code></td>
+                <td>Adds or removes elements from an array, starting at the specified index.</td>
+            </tr>
+            <tr>
+                <td><code>slice(start, end)</code></td>
+                <td>Returns a shallow copy of a portion of an array into a new array object.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="20">
+        <h3>
+            JavaScript Sorting Arrays
+        </h3>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>sort()</code></td>
+                <td>Sorts the elements of an array in place. The default sort order is built upon converting elements
+                    into strings, then comparing their sequences of UTF-16 code units values.</td>
+            </tr>
+            <tr>
+                <td><code>reverse()</code></td>
+                <td>Reverses the elements of an array in place. The first array element becomes the last, and the last
+                    array element becomes the first.</td>
+            </tr>
+            <tr>
+                <td><code>concat(array2, ..., arrayN)</code></td>
+                <td>Combines two or more arrays and returns a new array. The original arrays are not changed.</td>
+            </tr>
+            <tr>
+                <td><code>slice(start, end)</code></td>
+                <td>Returns a shallow copy of a portion of an array into a new array object. The original array is not
+                    changed.</td>
+            </tr>
+            <tr>
+                <td><code>indexOf(searchElement, fromIndex)</code></td>
+                <td>Returns the first index at which a given element can be found in the array, or -1 if it is not
+                    present.</td>
+            </tr>
+            <tr>
+                <td><code>lastIndexOf(searchElement, fromIndex)</code></td>
+                <td>Returns the last index at which a given element can be found in the array, or -1 if it is not
+                    present. The array is searched backward, starting at the optional parameter <code>fromIndex</code>.
+                </td>
+            </tr>
+            <tr>
+                <td><code>includes(searchElement, fromIndex)</code></td>
+                <td>Determines whether an array includes a certain element, returning <code>true</code> or
+                    <code>false</code> as appropriate. The array is searched from the optional parameter
+                    <code>fromIndex</code> onward.
+                </td>
+            </tr>
+            <tr>
+                <td><code>find(callback(element, index, array))</code></td>
+                <td>Returns the first element in the array that satisfies the provided testing function. Otherwise, it
+                    returns <code>undefined</code>.</td>
+            </tr>
+            <tr>
+                <td><code>findIndex(callback(element, index, array))</code></td>
+                <td>Returns the index of the first element in the array that satisfies the provided testing function.
+                    Otherwise, it returns -1.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="21">
+        <h3>
+            JavaScript Date Objects
+        </h3>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Example</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>new Date()</code></td>
+                <td><code>let currentDate = new Date();</code></td>
+                <td>Creates a new Date object representing the current date and time.</td>
+            </tr>
+            <tr>
+                <td><code>new Date("2023-01-01T12:00:00")</code></td>
+                <td><code>let specificDate = new Date("2023-01-01T12:00:00");</code></td>
+                <td>Creates a Date object for a specific date and time using a string.</td>
+            </tr>
+            <tr>
+                <td><code>new Date(2023, 0, 1, 12, 0, 0)</code></td>
+                <td><code>let customDate = new Date(2023, 0, 1, 12, 0, 0);</code></td>
+                <td>Creates a Date object for a specific date and time using individual components.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Getting Date Components</strong></td>
+            </tr>
+            <tr>
+                <td><code>getYear(), getMonth(), getDate()</code></td>
+                <td><code>let year = currentDate.getFullYear();</code></td>
+                <td>Get year, month (zero-based), and day of the month.</td>
+            </tr>
+            <tr>
+                <td><code>getHours(), getMinutes(), getSeconds()</code></td>
+                <td><code>let hour = currentDate.getHours();</code></td>
+                <td>Get hour, minute, and second of the time.</td>
+            </tr>
+            <tr>
+                <td><code>getDay()</code></td>
+                <td><code>let dayOfWeek = currentDate.getDay();</code></td>
+                <td>Get day of the week (0 - Sunday, 1 - Monday, ..., 6 - Saturday).</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Formatting Dates</strong></td>
+            </tr>
+            <tr>
+                <td><code>toString(), toDateString(), toTimeString(), toLocaleDateString()</code></td>
+                <td><code>let dateString = currentDate.toString();</code></td>
+                <td>Convert Date object to various string formats.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Manipulating Dates</strong></td>
+            </tr>
+            <tr>
+                <td><code>setDate(), setMonth(), setFullYear()</code></td>
+                <td><code>currentDate.setDate(currentDate.getDate() + 5);</code></td>
+                <td>Add or subtract days, months, or years from the current date.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Comparing Dates</strong></td>
+            </tr>
+            <tr>
+                <td><code>Comparison Operators</code></td>
+                <td><code>if (date1 < date2) { /* ... */ }</code></td>
+                <td>Compare two Date objects using comparison operators.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="22">
+        <h3>JavaScript Get Date Methods</h3>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Example</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>getFullYear()</code></td>
+                <td><code>let year = currentDate.getFullYear();</code></td>
+                <td>Returns the four-digit year of the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getMonth()</code></td>
+                <td><code>let month = currentDate.getMonth();</code></td>
+                <td>Returns the month (0-11) for the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getDate()</code></td>
+                <td><code>let day = currentDate.getDate();</code></td>
+                <td>Returns the day of the month (1-31) for the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getDay()</code></td>
+                <td><code>let dayOfWeek = currentDate.getDay();</code></td>
+                <td>Returns the day of the week (0-6) for the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getHours()</code></td>
+                <td><code>let hour = currentDate.getHours();</code></td>
+                <td>Returns the hour (0-23) in the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getMinutes()</code></td>
+                <td><code>let minute = currentDate.getMinutes();</code></td>
+                <td>Returns the minutes (0-59) in the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getSeconds()</code></td>
+                <td><code>let second = currentDate.getSeconds();</code></td>
+                <td>Returns the seconds (0-59) in the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getMilliseconds()</code></td>
+                <td><code>let millisecond = currentDate.getMilliseconds();</code></td>
+                <td>Returns the milliseconds (0-999) in the specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>getTime()</code></td>
+                <td><code>let timestamp = currentDate.getTime();</code></td>
+                <td>Returns the numeric value corresponding to the time for the specified date according to UTC,
+                    measured in milliseconds since January 1, 1970.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="23">
+        <h3>JavaScript Set Date Methods</h3>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Example</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>setFullYear(year[, month[, day]])</code></td>
+                <td><code>currentDate.setFullYear(2023);</code></td>
+                <td>Sets the full year for a specified date according to local time. Optionally, set the month and day.
+                </td>
+            </tr>
+            <tr>
+                <td><code>setMonth(month[, day])</code></td>
+                <td><code>currentDate.setMonth(11);</code></td>
+                <td>Sets the month (0-11) for a specified date according to local time. Optionally, set the day.</td>
+            </tr>
+            <tr>
+                <td><code>setDate(day)</code></td>
+                <td><code>currentDate.setDate(25);</code></td>
+                <td>Sets the day of the month (1-31) for a specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>setHours(hour[, min[, sec[, ms]]])</code></td>
+                <td><code>currentDate.setHours(15, 30, 0);</code></td>
+                <td>Sets the hours (0-23), minutes (0-59), seconds (0-59), and milliseconds (0-999) for a specified date
+                    according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>setMinutes(min[, sec[, ms]])</code></td>
+                <td><code>currentDate.setMinutes(45, 0);</code></td>
+                <td>Sets the minutes (0-59), seconds (0-59), and milliseconds (0-999) for a specified date according to
+                    local time.</td>
+            </tr>
+            <tr>
+                <td><code>setSeconds(sec[, ms])</code></td>
+                <td><code>currentDate.setSeconds(30);</code></td>
+                <td>Sets the seconds (0-59) and milliseconds (0-999) for a specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>setMilliseconds(ms)</code></td>
+                <td><code>currentDate.setMilliseconds(500);</code></td>
+                <td>Sets the milliseconds (0-999) for a specified date according to local time.</td>
+            </tr>
+            <tr>
+                <td><code>setTime(milliseconds)</code></td>
+                <td><code>currentDate.setTime(1638540000000);</code></td>
+                <td>Sets the Date object to the time represented by the specified number of milliseconds since January
+                    1, 1970 (UTC).</td>
+            </tr>
+        </table>
+    </section>
+    <section id="24">
+        <h3>JavaScript Math Object</h3>
+        <table>
+            <tr>
+                <th>Property/Method</th>
+                <th>Example</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>Math.PI</code></td>
+                <td><code>const pi = Math.PI;</code></td>
+                <td>Represents the mathematical constant π (pi).</td>
+            </tr>
+            <tr>
+                <td><code>Math.E</code></td>
+                <td><code>const e = Math.E;</code></td>
+                <td>Represents the mathematical constant e, the base of natural logarithms.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Trigonometric Functions</strong></td>
+            </tr>
+            <tr>
+                <td><code>Math.sin(x)</code></td>
+                <td><code>const sineValue = Math.sin(pi / 4);</code></td>
+                <td>Returns the sine of x, where x is in radians.</td>
+            </tr>
+            <tr>
+                <td><code>Math.cos(x)</code></td>
+                <td><code>const cosineValue = Math.cos(pi / 4);</code></td>
+                <td>Returns the cosine of x, where x is in radians.</td>
+            </tr>
+            <tr>
+                <td><code>Math.tan(x)</code></td>
+                <td><code>const tangentValue = Math.tan(pi / 4);</code></td>
+                <td>Returns the tangent of x, where x is in radians.</td>
+            </tr>
+            <tr>
+                <td><code>Math.asin(x)</code></td>
+                <td><code>const arcsineValue = Math.asin(0.5);</code></td>
+                <td>Returns the arcsine of x, in radians.</td>
+            </tr>
+            <tr>
+                <td><code>Math.acos(x)</code></td>
+                <td><code>const arccosineValue = Math.acos(0.5);</code></td>
+                <td>Returns the arccosine of x, in radians.</td>
+            </tr>
+            <tr>
+                <td><code>Math.atan(x)</code></td>
+                <td><code>const arctangentValue = Math.atan(1);</code></td>
+                <td>Returns the arctangent of x, in radians.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Exponential and Logarithmic Functions</strong></td>
+            </tr>
+            <tr>
+                <td><code>Math.exp(x)</code></td>
+                <td><code>const expValue = Math.exp(2);</code></td>
+                <td>Returns the value of E^x, where x is the argument.</td>
+            </tr>
+            <tr>
+                <td><code>Math.log(x)</code></td>
+                <td><code>const logValue = Math.log(10);</code></td>
+                <td>Returns the natural logarithm (base E) of x.</td>
+            </tr>
+            <tr>
+                <td><code>Math.log10(x)</code></td>
+                <td><code>const log10Value = Math.log10(100);</code></td>
+                <td>Returns the base 10 logarithm of x.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Power and Square Root Functions</strong></td>
+            </tr>
+            <tr>
+                <td><code>Math.pow(x, y)</code></td>
+                <td><code>const powValue = Math.pow(2, 3);</code></td>
+                <td>Returns x raised to the power of y.</td>
+            </tr>
+            <tr>
+                <td><code>Math.sqrt(x)</code></td>
+                <td><code>const sqrtValue = Math.sqrt(16);</code></td>
+                <td>Returns the positive square root of x.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Rounding Functions</strong></td>
+            </tr>
+            <tr>
+                <td><code>Math.round(x)</code></td>
+                <td><code>const roundedValue = Math.round(4.7);</code></td>
+                <td>Returns the value of x rounded to the nearest integer.</td>
+            </tr>
+            <tr>
+                <td><code>Math.floor(x)</code></td>
+                <td><code>const floorValue = Math.floor(4.7);</code></td>
+                <td>Returns the largest integer less than or equal to x.</td>
+            </tr>
+            <tr>
+                <td><code>Math.ceil(x)</code></td>
+                <td><code>const ceilValue = Math.ceil(4.2);</code></td>
+                <td>Returns the smallest integer greater than or equal to x.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Random Number Functions</strong></td>
+            </tr>
+            <tr>
+                <td><code>Math.random()</code></td>
+                <td><code>const randomValue = Math.random();</code></td>
+                <td>Returns a pseudo-random number between 0 (inclusive) and 1 (exclusive).</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Other Functions</strong></td>
+            </tr>
+            <tr>
+                <td><code>Math.abs(x)</code></td>
+                <td><code>const absoluteValue = Math.abs(-5);</code></td>
+                <td>Returns the absolute value of x.</td>
+            </tr>
+            <tr>
+                <td><code>Math.min(x, y, ...)</code></td>
+                <td><code>const minValue = Math.min(2, 5, 1, -3);</code></td>
+                <td>Returns the smallest of zero or more numbers.</td>
+            </tr>
+            <tr>
+                <td><code>Math.max(x, y, ...)</code></td>
+                <td><code>const maxValue = Math.max(2, 5, 1, -3);</code></td>
+                <td>Returns the largest of zero or more numbers.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="24">
+        <h3>JavaScript Comparison and Logical Operators</h3>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Result</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>==</code></td>
+                <td><code>x == 8</code></td>
+                <td>false</td>
+                <td>Equal to</td>
+            </tr>
+            <tr>
+                <td><code>==</code></td>
+                <td><code>x == 5</code></td>
+                <td>true</td>
+                <td>Equal to</td>
+            </tr>
+            <tr>
+                <td><code>==</code></td>
+                <td><code>x == "5"</code></td>
+                <td>true</td>
+                <td>Equal to (type coercion)</td>
+            </tr>
+            <tr>
+                <td><code>===</code></td>
+                <td><code>x === 5</code></td>
+                <td>true</td>
+                <td>Equal value and equal type</td>
+            </tr>
+            <tr>
+                <td><code>===</code></td>
+                <td><code>x === "5"</code></td>
+                <td>false</td>
+                <td>Equal value but different type</td>
+            </tr>
+            <tr>
+                <td><code>!=</code></td>
+                <td><code>x != 8</code></td>
+                <td>true</td>
+                <td>Not equal</td>
+            </tr>
+            <tr>
+                <td><code>!==</code></td>
+                <td><code>x !== 5</code></td>
+                <td>false</td>
+                <td>Not equal value or not equal type</td>
+            </tr>
+            <tr>
+                <td><code>!==</code></td>
+                <td><code>x !== "5"</code></td>
+                <td>true</td>
+                <td>Not equal value</td>
+            </tr>
+            <tr>
+                <td><code>!==</code></td>
+                <td><code>x !== 8</code></td>
+                <td>true</td>
+                <td>Not equal type</td>
+            </tr>
+            <tr>
+                <td><code>&gt;</code></td>
+                <td><code>x &gt; 8</code></td>
+                <td>false</td>
+                <td>Greater than</td>
+            </tr>
+            <tr>
+                <td><code>&lt;</code></td>
+                <td><code>x &lt; 8</code></td>
+                <td>true</td>
+                <td>Less than</td>
+            </tr>
+            <tr>
+                <td><code>&gt;=</code></td>
+                <td><code>x &gt;= 8</code></td>
+                <td>false</td>
+                <td>Greater than or equal to</td>
+            </tr>
+            <tr>
+                <td><code>&lt;=</code></td>
+                <td><code>x &lt;= 8</code></td>
+                <td>true</td>
+                <td>Less than or equal to</td>
+            </tr>
+        </table>
+    </section>
+    <section id="25">
+        <h3>Javascript Conditional Statements</h3>
+        <p>Conditional statements in JavaScript are used to make decisions in your code based on certain conditions.
+            These statements allow you to execute different blocks of code depending on whether a specified condition
+            evaluates to true or false.</p>
+    </section>
+    <section id="26">
+        <h3></h3>
+        <table>
+            <tr>
+                <th>Statement</th>
+                <th>Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>if</code></td>
+                <td><code>if (condition) { /* Code */ }</code></td>
+                <td>Executes code if the condition is true.</td>
+            </tr>
+            <tr>
+                <td><code>if-else</code></td>
+                <td><code>if (condition) { /* Code */ } else { /* Code */ }</code></td>
+                <td>Executes one block if the condition is true and another block if false.</td>
+            </tr>
+            <tr>
+                <td><code>if-else if-else</code></td>
+                <td><code>if (condition1) { /* Code */ } else if (condition2) { /* Code */ } else { /* Code */ }</code>
+                </td>
+                <td>Checks multiple conditions in sequence and executes the block for the first true condition.</td>
+            </tr>
+            <tr>
+                <td><code>switch</code></td>
+                <td>
+                    <pre>
+                <code>
+                switch (expression) {
+                    case value1:
+                        // Code
+                        break;
+                    case value2:
+                        // Code
+                        break;
+                    default:
+                        // Code
+                }
+                </code>
+                </pre>
+                </td>
+                <td>Handles multiple cases based on the value of an expression.</td>
+            </tr>
+            <tr>
+                <td><code>Ternary Operator</code></td>
+                <td><code>condition ? expressionIfTrue : expressionIfFalse</code></td>
+                <td>Provides a concise way to write simple <code>if-else</code> statements in a single line.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="27">
+        <h3>JavaScript Switch Statement</h3>
+        <p>
+            The switch statement in JavaScript is a control flow statement that provides a way to handle multiple cases
+            based on the value of an expression. It is particularly useful when you have a single expression with
+            multiple possible values, and you want to execute different blocks of code for each possible value.
+        </p>
+        <p id="menu"></p>
+
+        <script>
+            // JavaScript code
+            // Get the current date
+            let currentDate = new Date();
+
+            // Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+            let dayOfWeek = currentDate.getDay();
+
+            // Display the menu for the current day on the HTML page
+            let menuElement = document.getElementById("menu");
+            switch (dayOfWeek) {
+                case 0:
+                    menuElement.textContent = "No menu on Sunday";
+                    break;
+                case 1:
+                    menuElement.textContent = "Monday: Spaghetti Bolognese";
+                    break;
+                case 2:
+                    menuElement.textContent = "Tuesday: Grilled Chicken Salad";
+                    break;
+                case 3:
+                    menuElement.textContent = "Wednesday: Vegetable Stir-Fry";
+                    break;
+                case 4:
+                    menuElement.textContent = "Thursday: Margherita Pizza";
+                    break;
+                case 5:
+                    menuElement.textContent = "Friday: Fish Tacos";
+                    break;
+                case 6:
+                    menuElement.textContent = "Saturday: BBQ Pulled Pork Sandwich";
+                    break;
+                default:
+                    menuElement.textContent = "Invalid day";
+            }
+        </script>
+    </section>
+    <section id="28">
+        <h3></h3>
+        <p>
+
+        </p>
+    </section>
+    <section id="29">
+        <h2>JavaScript Loops</h2>
+
+        <table>
+            <tr>
+                <th>Loop Type</th>
+                <th>Syntax</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>for</code></td>
+                <td><code>for (initialization; condition; increment/decrement) { /* Code */ }</code></td>
+                <td>Repeats a block of code a specified number of times.</td>
+            </tr>
+            <tr>
+                <td><code>while</code></td>
+                <td><code>while (condition) { /* Code */ }</code></td>
+                <td>Repeats a block of code as long as a specified condition is true.</td>
+            </tr>
+            <tr>
+                <td><code>do-while</code></td>
+                <td><code>do { /* Code */ } while (condition);</code></td>
+                <td>Similar to <code>while</code> loop but ensures at least one execution of the code block.</td>
+            </tr>
+            <tr>
+                <td><code>for...in</code></td>
+                <td><code>for (variable in object) { /* Code */ }</code></td>
+                <td>Iterates over the enumerable properties of an object.</td>
+            </tr>
+            <tr>
+                <td><code>for...of</code></td>
+                <td><code>for (variable of iterable) { /* Code */ }</code></td>
+                <td>Iterates over iterable objects (arrays, strings, etc.).</td>
+            </tr>
+            <tr>
+                <td><code>forEach</code> (Array method)</td>
+                <td><code>array.forEach(function (element) { /* Code */ });</code></td>
+                <td>Executes a provided function once for each array element.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="30">
+        <h3>Javascript Sets</h3>
+        <p>
+            In JavaScript, a Set is a built-in object that allows you to store unique values of any data type, whether
+            primitive values or object references. A Set cannot contain duplicate values, ensuring that each value
+            appears only once. The order of elements in a Set is based on the order in which they were added.
+        </p>
+        <table>
+            <tr>
+                <th>Method/Property</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>new Set()</code></td>
+                <td>Creates a new Set.</td>
+                <td><code>let mySet = new Set();</code></td>
+            </tr>
+            <tr>
+                <td><code>add()</code></td>
+                <td>Adds a new element to the Set.</td>
+                <td><code>mySet.add("apple");</code></td>
+            </tr>
+            <tr>
+                <td><code>delete()</code></td>
+                <td>Removes an element from a Set.</td>
+                <td><code>mySet.delete("apple");</code></td>
+            </tr>
+            <tr>
+                <td><code>has()</code></td>
+                <td>Returns true if a value exists in the Set.</td>
+                <td><code>mySet.has("apple");</code></td>
+            </tr>
+            <tr>
+                <td><code>forEach()</code></td>
+                <td>Invokes a callback for each element in the Set.</td>
+                <td>
+                    <code>
+                mySet.forEach(function(value) {<br>
+                &nbsp;&nbsp;console.log(value);<br>
+                });
+                </code>
+                </td>
+            </tr>
+            <tr>
+                <td><code>values()</code></td>
+                <td>Returns an iterator with all the values in a Set.</td>
+                <td>
+                    <code>
+                let iterator = mySet.values();<br>
+                for (let value of iterator) {<br>
+                &nbsp;&nbsp;console.log(value);<br>
+                }
+                </code>
+                </td>
+            </tr>
+            <tr>
+                <td><code>size</code></td>
+                <td>Returns the number of elements in a Set.</td>
+                <td><code>let setSize = mySet.size;</code></td>
+            </tr>
+        </table>
+    </section>
+    <section id="31">
+        <h3>Javascript Maps</h3>
+        <p>
+            A Map holds key-value pairs where the keys can be any datatype.
+            A Map remembers the original insertion order of the keys.
+        </p>
+        <table>
+            <tr>
+                <th>Method/Property</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>new Map()</code></td>
+                <td>Creates a new Map.</td>
+                <td><code>let myMap = new Map();</code></td>
+            </tr>
+            <tr>
+                <td><code>set()</code></td>
+                <td>Sets the value for a key in a Map.</td>
+                <td><code>myMap.set("key1", "value1");</code></td>
+            </tr>
+            <tr>
+                <td><code>get()</code></td>
+                <td>Gets the value for a key in a Map.</td>
+                <td><code>let value = myMap.get("key1");</code></td>
+            </tr>
+            <tr>
+                <td><code>delete()</code></td>
+                <td>Removes a Map element specified by the key.</td>
+                <td><code>myMap.delete("key1");</code></td>
+            </tr>
+            <tr>
+                <td><code>has()</code></td>
+                <td>Returns true if a key exists in a Map.</td>
+                <td><code>let exists = myMap.has("key1");</code></td>
+            </tr>
+            <tr>
+                <td><code>forEach()</code></td>
+                <td>Calls a function for each key/value pair in a Map.</td>
+                <td>
+                    <code>
+            myMap.forEach(function(value, key) {<br>
+            &nbsp;&nbsp;console.log(key, value);<br>
+            });
+            </code>
+                </td>
+            </tr>
+            <tr>
+                <td><code>entries()</code></td>
+                <td>Returns an iterator with the [key, value] pairs in a Map.</td>
+                <td>
+                    <code>
+            let iterator = myMap.entries();<br>
+            for (let entry of iterator) {<br>
+            &nbsp;&nbsp;console.log(entry[0], entry[1]);<br>
+            }
+            </code>
+                </td>
+            </tr>
+            <tr>
+                <td><code>size</code></td>
+                <td>Returns the number of elements in a Map.</td>
+                <td><code>let mapSize = myMap.size;</code></td>
+            </tr>
+        </table>
+    </section>
+    <section id="32">
+        <h3>Javascript Typeof</h3>
+        <table>
+            <tr>
+                <th>Method/Operation</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>String(value)</code></td>
+                <td>Converts a value to a string.</td>
+                <td><code>let num = 42;<br>let str = String(num);</code></td>
+            </tr>
+            <tr>
+                <td><code>Number(value)</code></td>
+                <td>Converts a value to a number.</td>
+                <td><code>let str = "42";<br>let num = Number(str);</code></td>
+            </tr>
+            <tr>
+                <td><code>parseInt(string, radix)</code></td>
+                <td>Parses a string and returns an integer.</td>
+                <td><code>let str = "42";<br>let num = parseInt(str);</code></td>
+            </tr>
+            <tr>
+                <td><code>parseFloat(string)</code></td>
+                <td>Parses a string and returns a floating-point number.</td>
+                <td><code>let str = "42.5";<br>let num = parseFloat(str);</code></td>
+            </tr>
+            <tr>
+                <td><code>Boolean(value)</code></td>
+                <td>Converts a value to a boolean.</td>
+                <td><code>let truthyValue = Boolean("Hello");</code></td>
+            </tr>
+            <tr>
+                <td><code>value.toString()</code></td>
+                <td>Converts a value to its string representation.</td>
+                <td><code>let num = 42;<br>let str = num.toString();</code></td>
+            </tr>
+            <tr>
+                <td><code>+"42"</code></td>
+                <td>Unary plus operator converts a string to a number.</td>
+                <td><code>let str = "42";<br>let num = +str;</code></td>
+            </tr>
+            <tr>
+                <td><code>!!value</code></td>
+                <td>Double NOT operator converts a value to a boolean.</td>
+                <td><code>let truthyValue = !! "Hello";</code></td>
+            </tr>
+        </table>
+    </section>
+    <section id="33">
+        <h3>JavaScript Regular Expressions</h3>
+        <p>
+            Regular expressions (regex or regexp) are powerful tools for pattern matching within strings. They provide a
+            concise and flexible syntax for defining search patterns, making them valuable in various programming and
+            text-processing tasks.
+        </p>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>test()</code></td>
+                <td>Tests for a match in a string. Returns <code>true</code> or <code>false</code>.</td>
+                <td><code>/pattern/.test("inputString");</code></td>
+            </tr>
+            <tr>
+                <td><code>exec()</code></td>
+                <td>Executes a search for a match in a string. Returns an array of match information or
+                    <code>null</code>.
+                </td>
+                <td><code>/pattern/.exec("inputString");</code></td>
+            </tr>
+            <tr>
+                <td><code>match()</code></td>
+                <td>Returns an array containing all matches of a pattern in a string or <code>null</code> if no match is
+                    found.</td>
+                <td><code>"inputString".match(/pattern/);</code></td>
+            </tr>
+            <tr>
+                <td><code>search()</code></td>
+                <td>Searches a string for a specified value or pattern. Returns the index of the first match or
+                    <code>-1</code> if not found.
+                </td>
+                <td><code>"inputString".search(/pattern/);</code></td>
+            </tr>
+            <tr>
+                <td><code>replace()</code></td>
+                <td>Searches a string for a specified value or pattern and replaces it with another string.</td>
+                <td><code>"inputString".replace(/pattern/, "replacement");</code></td>
+            </tr>
+            <tr>
+                <td><code>split()</code></td>
+                <td>Splits a string into an array of substrings based on a specified delimiter or regular expression.
+                </td>
+                <td><code>"inputString".split(/pattern/);</code></td>
+            </tr>
+        </table>
+    </section>
+    <section id="34">
+        <h3>JavaScript Errors</h3>
+        <table>
+            <tr>
+                <th>Statement</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>try</code></td>
+                <td>Defines a code block to run (to try). If an error occurs, control jumps to the <code>catch</code>
+                    block.</td>
+                <td>
+                    <code>
+                    try {<br>
+                    &nbsp;&nbsp;// Code to be executed<br>
+                    } catch (error) {<br>
+                    &nbsp;&nbsp;// Code to handle errors<br>
+                    }
+                </code>
+                </td>
+            </tr>
+            <tr>
+                <td><code>catch</code></td>
+                <td>Defines a code block to handle any error that occurred in the associated <code>try</code> block.
+                </td>
+                <td>
+                    <code>
+                    try {<br>
+                    &nbsp;&nbsp;// Code to be executed<br>
+                    } catch (error) {<br>
+                    &nbsp;&nbsp;// Code to handle errors<br>
+                    }
+                </code>
+                </td>
+            </tr>
+            <tr>
+                <td><code>finally</code></td>
+                <td>Defines a code block to run regardless of the result of the <code>try</code> and <code>catch</code>
+                    blocks.</td>
+                <td>
+                    <code>
+                    try {<br>
+                    &nbsp;&nbsp;// Code to be executed<br>
+                    } catch (error) {<br>
+                    &nbsp;&nbsp;// Code to handle errors<br>
+                    } finally {<br>
+                    &nbsp;&nbsp;// Code to be executed regardless of try/catch result<br>
+                    }
+                </code>
+                </td>
+            </tr>
+            <tr>
+                <td><code>throw</code></td>
+                <td>Defines a custom error and throws it. Typically used inside the <code>try</code> block to signal an
+                    error condition.</td>
+                <td>
+                    <code>
+                    throw new Error("This is a custom error message");
+                </code>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section id="35">
+        <h3>JavaScript Scope</h3>
+        <p>
+            Scope in JavaScript refers to the context in which variables and functions are declared and the
+            accessibility of these declarations during runtime. Understanding scope is crucial for writing maintainable
+            and bug-free code. In JavaScript, there are two main types of scope: global scope and local scope.<br>
+            <b>
+                Local Scope in JavaScript</b><br>
+            Local scope in JavaScript refers to the context in which variables are declared and the accessibility of
+            these variables within a specific region of code, such as a function or a block. Variables declared within
+            this local scope are only accessible and visible within that specific region, and they do not interfere with
+            variables in other scopes.
+
+            <br>
+            <b>Global Scope in JavaScript</b><br>
+            Global scope in JavaScript refers to the context in which variables are declared and are accessible
+            throughout the entire codebase, including all functions and blocks. Variables declared in the global scope
+            are known as global variables, and functions declared at the top level are considered global functions.
+            Understanding global scope is essential for grasping the visibility and lifetime of variables across
+            different parts of a JavaScript program.
+            <br><b>Lexical Scope in JavaScript:</b><br>
+            Lexical scope, also known as static scope, is a fundamental concept in JavaScript that describes how the
+            variable scope is determined at the time of lexical parsing (during the creation phase) and is based on the
+            physical structure of the code. Lexical scope allows functions to access variables from their containing
+            (parent) scope, even after the function has finished executing. This concept is crucial for understanding
+            how closures work in JavaScript.
+        </p>
+    </section>
+    <section id="37">
+        <h3>JavaScript Hoisting</h3>
+        <p>Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their
+            containing scope during the compilation phase, before the code is executed. This means that regardless of
+            where variables and functions are declared in the code, they are conceptually moved to the top of their
+            scope, making them available for use even before their actual declaration in the code.
+        </p>
+    </section>
+    <section id="">
+        <h3>JavaScript </h3>
+        <p>
+            Strict mode in JavaScript provides a more secure and optimized environment for coding by enforcing a set of
+            rules and restrictions.
+            Strict mode in JavaScript provides a more secure and optimized environment for coding by enforcing a set of
+            rules and restrictions. Here are some common use cases and benefits of using strict mode:
+       </p>
+    </section>
+    <section id="">
+        <h3></h3>
+        <p>
+
+        </p>
+    </section>
+    <section id="">
+        <h3></h3>
+        <p>
+
+        </p>
+    </section>
+    <section id="">
+        <h3></h3>
+        <p>
+
+        </p>
+    </section>
 </body>
 
 </html>

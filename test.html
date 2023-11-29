@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Error Handling Statements</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Error Handling Statements</h2>
+
+    <table>
+        <tr>
+            <th>Statement</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>try</code></td>
+            <td>Defines a code block to run (to try). If an error occurs, control jumps to the <code>catch</code> block.</td>
+            <td>
+                <code>
+                    try {<br>
+                    &nbsp;&nbsp;// Code to be executed<br>
+                    } catch (error) {<br>
+                    &nbsp;&nbsp;// Code to handle errors<br>
+                    }
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>catch</code></td>
+            <td>Defines a code block to handle any error that occurred in the associated <code>try</code> block.</td>
+            <td>
+                <code>
+                    try {<br>
+                    &nbsp;&nbsp;// Code to be executed<br>
+                    } catch (error) {<br>
+                    &nbsp;&nbsp;// Code to handle errors<br>
+                    }
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>finally</code></td>
+            <td>Defines a code block to run regardless of the result of the <code>try</code> and <code>catch</code> blocks.</td>
+            <td>
+                <code>
+                    try {<br>
+                    &nbsp;&nbsp;// Code to be executed<br>
+                    } catch (error) {<br>
+                    &nbsp;&nbsp;// Code to handle errors<br>
+                    } finally {<br>
+                    &nbsp;&nbsp;// Code to be executed regardless of try/catch result<br>
+                    }
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>throw</code></td>
+            <td>Defines a custom error and throws it. Typically used inside the <code>try</code> block to signal an error condition.</td>
+            <td>
+                <code>
+                    throw new Error("This is a custom error message");
+                </code>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
