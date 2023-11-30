@@ -1,86 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Error Handling Statements</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+<title>Fixed Appbar</title>
+<style>
+.appbar {
+position: fixed;
+top: 0;
+left: 0;
+height: 100px;/*AdjustHere*/
+width: 100%;
+background-color: #f0f0f0;
+padding: 20px;
+}
+
+.appbar ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+.appbar li {
+float: left;
+}
+
+.appbar li a {
+display:  flex; 
+color: black;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+justify-content: space-between;
+}
+
+.appbar li a:hover {
+background-color: #eee;
+}
+</style>
 </head>
 <body>
+<section class="appbar">
+    <h3>JavaScript</h3>
+   <h3>okay</h3>>
+</section>
 
-    <h2>JavaScript Error Handling Statements</h2>
+<div style="margin-top: 150px;"><!--AdjustHere-->
+    <section id="#1">
+        <h3>JavaScript in Html</h3>
+        <h5 style="text-decoration: underline;"><code>&lt;script&gt;</code> Tag</h5>
+        <p>
+            In HTML, JavaScript code is inserted between &lt;script&gt; and &lt;/script&gt; tags.
+        </p>
+        <p id="Text"></p>
+        <script>
+            document.getElementById("Text").innerHTML = "Iam a Javascript Text..";
+        </script>
+        <p>Javascript can be placed in the &lt;body&gt;, or in the &lt;head&gt; section of an HTML page, or in both.
+        </p>
+        <h5 style="text-decoration: underline;">External Javascript</h5>
+        <p>
+            External scripts are practical when the same code is used in many different web pages.
+            JavaScript files have the file extension .js.
+            To use an external script, put the name of the script file in the src (source) attribute of a &lt;script&gt;
+            tag:
+        </p>
+    </section>
+    <section id="#2">
+        <h3>JavaScript Display</h3>
 
-    <table>
-        <tr>
-            <th>Statement</th>
-            <th>Description</th>
-            <th>Example</th>
-        </tr>
-        <tr>
-            <td><code>try</code></td>
-            <td>Defines a code block to run (to try). If an error occurs, control jumps to the <code>catch</code> block.</td>
-            <td>
-                <code>
-                    try {<br>
-                    &nbsp;&nbsp;// Code to be executed<br>
-                    } catch (error) {<br>
-                    &nbsp;&nbsp;// Code to handle errors<br>
-                    }
-                </code>
-            </td>
-        </tr>
-        <tr>
-            <td><code>catch</code></td>
-            <td>Defines a code block to handle any error that occurred in the associated <code>try</code> block.</td>
-            <td>
-                <code>
-                    try {<br>
-                    &nbsp;&nbsp;// Code to be executed<br>
-                    } catch (error) {<br>
-                    &nbsp;&nbsp;// Code to handle errors<br>
-                    }
-                </code>
-            </td>
-        </tr>
-        <tr>
-            <td><code>finally</code></td>
-            <td>Defines a code block to run regardless of the result of the <code>try</code> and <code>catch</code> blocks.</td>
-            <td>
-                <code>
-                    try {<br>
-                    &nbsp;&nbsp;// Code to be executed<br>
-                    } catch (error) {<br>
-                    &nbsp;&nbsp;// Code to handle errors<br>
-                    } finally {<br>
-                    &nbsp;&nbsp;// Code to be executed regardless of try/catch result<br>
-                    }
-                </code>
-            </td>
-        </tr>
-        <tr>
-            <td><code>throw</code></td>
-            <td>Defines a custom error and throws it. Typically used inside the <code>try</code> block to signal an error condition.</td>
-            <td>
-                <code>
-                    throw new Error("This is a custom error message");
-                </code>
-            </td>
-        </tr>
-    </table>
+        <p>
+            <b>Using innerHtml</b><br>
+            To access an HTML element, JavaScript can use the document.getElementById(id) method.
+            The id attribute defines the HTML element. The innerHTML property defines the HTML content:
+            <b id="Tex"></b>
+        </p>
+        <script>
+            document.getElementById("Tex").innerHTML = "This Text is written using JavaScript";
+        </script>
+        <p>
+            <b>Using Document.write</b><br>
+            Never call document.write after the document has finished loading.
+            It will overwrite the whole document.
+            <b>
+                <script>
+                    document.write('Text written using Document.write');
+                </script>
+            </b>
+        </p>
+        <p>
+            <b> Using window.alert</b><br>
+            <button onclick="showAlert()">Click me to know What is 1+1=??</button>
 
+            <!-- Add a script to define the showAlert function -->
+            <script>
+                function showAlert() {
+                    window.alert('1+1=2');
+                }
+            </script>
+        </p>
+        <p>
+            <b>Using console.log</b>
+            For debugging purposes, you can call the console.log() method in the browser to display data in Debug
+            Console.
+        </p>
+    </section>
+    <section id="#3">
+
+        <h3>Javascript Comments</h3>
+        <script>
+            //This is an Example for Javascript Comments!!, it will be ignored by javascript,will not be executed.
+            /* Example
+            for 
+            Multiline Comments*/
+        </script>
+        <p></p>
+        Single line comments start with //.<br>
+        Multi-line comments start with /* and end with */.<br>
+        Any text between /* and */ will be ignored by JavaScript.<br>
+        We can use comments to prevent execution of code.
+        </p>
+    </section>
+    <section id="#4">
+        <h3>JavaScript Variables</h3>
+        <p>Variables are Containers for Storing Data
+            JavaScript Variables can be declared in 4 ways:
+            <br>Automatically<br>
+            Using<code> var</code> <br>
+            Using <code> let</code><br>
+            Using <code> const</code><br>
+            You can declare many variables in one statement.
+            Start the statement with let and separate the variables by comma,
+        </p>
+        <script>
+            let personName = "John Doe", carName = "Volvo", price = 200;
+        </script>
+    </section>
+</div>
 </body>
 </html>
