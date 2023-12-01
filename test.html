@@ -10,38 +10,34 @@ left: 0;
 height: 100px;/*AdjustHere*/
 width: 100%;
 background-color: #f0f0f0;
-padding: 20px;
+/* padding: 20px; */
 }
-
-.appbar ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
-}
-
-.appbar li {
-float: left;
-}
-
-.appbar li a {
-display:  flex; 
-color: black;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-justify-content: space-between;
-}
-
-.appbar li a:hover {
-background-color: #eee;
-}
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between; /* Adjust as needed */
+            align-items: center; /* Optional: align items to the center */
+            /* padding: 20px; */
+            background-color: teal;
+            height: 100px;
+        }
+        .row div {
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f5f5f5;
+        }
 </style>
 </head>
 <body>
 <section class="appbar">
-    <h3>JavaScript</h3>
-   <h3>okay</h3>>
+    <div class="row">
+        <h3>JavaScript</h3>
+        <h3>okay</h3>
+    </div>
 </section>
 
 <div style="margin-top: 150px;"><!--AdjustHere-->
