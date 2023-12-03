@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Countdown Timer</h1>
+    
+    <label for="countdownDate">Enter Countdown Date and Time:</label>
+    <input type="datetime-local" id="countdownDate">
+    <button onclick="startCountdown()">Start Countdown</button>
+
+    <div id="countdown"></div>
+
+    <script>
+        let targetDate;
+
+        function startCountdown() {
+            // Get the user-inputted target date and time
+            const userInput = document.getElementById('countdownDate').value;
+
+            if (userInput) {
+                targetDate = new Date(userInput).getTime();
+
+                // Update the countdown every 1 second
+                const countdownInterval = setInterval(updateCountdown, 1000);
+
+                function updateCountdown() {
+                    // Get the current date and time
+                    const currentDate = new Date().getTime();
+
+                    // Calculate the time difference between the target date and the current date
+                    const timeDifference = targetDate - currentDate;
+
+                    // Calculate days, hours, minutes, and seconds
+                    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                    // Display the countdown in the HTML element with id "countdown"
+                    document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                    // Check if the target date and time have passed
+                    if (timeDifference < 0) {
+                        clearInterval(countdownInterval); // Stop the countdown when it reaches zero
+                        document.getElementById('countdown').innerHTML = 'EXPIRED';
+                    }
+                }
+            } else {
+                alert('Please enter a valid date and time.');
+            }
+        }
+    </script>
+
+</body>
+</html>
