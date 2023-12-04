@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #app {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Expense Tracker</h1>
+        <!-- Input fields for entering expense and amount -->
+        <input type="text" id="expenseInput" placeholder="Enter expense">
+        <input type="number" id="amountInput" placeholder="Enter amount">
+        <!-- Button to add a new expense -->
+        <button onclick="addExpense()">Add Expense</button>
+        <!-- List to display expenses -->
+        <ul id="expenseList"></ul>
+        <!-- Display total expenses -->
+        <p>Total Expenses: $<span id="totalExpenses">0</span></p>
+
+        <script>
+            // Get references to HTML elements
+            const expenseInput = document.getElementById('expenseInput');
+            const amountInput = document.getElementById('amountInput');
+            const expenseList = document.getElementById('expenseList');
+            const totalExpenses = document.getElementById('totalExpenses');
+
+            // Load existing expenses from localStorage on page load
+            document.addEventListener('DOMContentLoaded', function () {
+                // Retrieve stored expenses from localStorage
+                const storedExpenses = localStorage.getItem('expenses');
+
+                // Check if there are stored expenses
+                if (storedExpenses) {
+                    // Parse stored JSON string into an array
+                    expenses = JSON.parse(storedExpenses);
+                    // Update the displayed list and total
+                    updateExpenseList();
+                    updateTotalExpenses();
+                }
+            });
+
+            // Array to store expense objects
+            let expenses = [];
+
+            // Function to add a new expense
+            function addExpense() {
+                // Retrieve input values
+                const expenseText = expenseInput.value;
+                const expenseAmount = parseFloat(amountInput.value);
+
+                // Validate input values
+                if (expenseText.trim() !== '' && !isNaN(expenseAmount) && expenseAmount > 0) {
+                    // Create a new expense object
+                    const expense = {
+                        text: expenseText,
+                        amount: expenseAmount
+                    };
+
+                    // Add the new expense to the array
+                    expenses.push(expense);
+
+                    // Save the updated expenses to localStorage
+                    localStorage.setItem('expenses', JSON.stringify(expenses));
+
+                    // Update the displayed list and total
+                    updateExpenseList();
+                    updateTotalExpenses();
+
+                    // Clear input fields
+                    expenseInput.value = '';
+                    amountInput.value = '';
+                } else {
+                    // Display an alert for invalid input
+                    alert('Please enter a valid expense and amount.');
+                }
+            }
+
+            // Function to update the displayed list of expenses
+            function updateExpenseList() {
+                // Clear existing list
+                expenseList.innerHTML = '';
+
+                // Render the updated list
+                expenses.forEach(expense => {
+                    const listItem = document.createElement('li');
+                    // Display expense details in the list item
+                    listItem.innerHTML = `
+                        <span>${expense.text}</span>
+                        <span>$${expense.amount.toFixed(2)}</span>
+                    `;
+                    // Add the list item to the expenseList
+                    expenseList.appendChild(listItem);
+                });
+            }
+
+            // Function to update the displayed total of expenses
+            function updateTotalExpenses() {
+                // Calculate the total expense amount
+                const total = expenses.reduce((acc, expense) => acc + expense.amount, 0);
+                // Display the total in the HTML
+                totalExpenses.textContent = total.toFixed(2);
+            }
+        </script>
+    </div>
+</body>
+</html>
